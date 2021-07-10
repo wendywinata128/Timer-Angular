@@ -1,0 +1,130 @@
+.container {
+  // background-color: aliceblue;
+  position: relative;
+  width: 360px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  width: 360px;
+  height: 360px;
+  // background-color: aliceblue;
+}
+
+svg circle {
+  r: 170;
+  cx: 180;
+  cy: 180;
+  fill: none;
+  stroke-width: 7px;
+  stroke: rgb(49, 49, 49);
+  stroke-dasharray: 1070;
+  stroke-dashoffset: 0;
+  z-index: -1;
+  filter: drop-shadow(0px 0px 4px rgb(49, 49, 49));
+}
+
+svg circle.progress {
+  stroke: rgb(233, 11, 11);
+  filter: drop-shadow(0px 0px 4px rgb(233, 11, 11))
+    drop-shadow(0px 0px 4px rgb(233, 11, 11));
+  stroke-dashoffset: 1070;
+  transform: rotate(90deg);
+  transform-origin: center center;
+}
+
+svg circle.progress {
+  // animation: test 15s linear infinite;
+}
+
+@keyframes test {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.fire {
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  width: 25px;
+  // background-color: aliceblue;
+  transform-origin: top center;
+  // animation: fire 15s linear infinite;
+}
+
+@keyframes fire {
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.fire::before {
+  content: "";
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  bottom: 0;
+  background-color: orange;
+  box-shadow: 0px 0px 4px orange, 0px 0px 12px orange, 0px 0px 18px orange;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%) rotate(225deg);
+  animation: fireanim 0.7s linear infinite;
+  filter: blur(1px);
+}
+@keyframes fireanim {
+  0% {
+    transform: translateX(-50%) rotate(225deg) scale(1);
+    box-shadow: 0px 0px 4px orange, 0px 0px 12px orange, 0px 0px 18px orange;
+  }
+  50% {
+    transform: translateX(-50%) rotate(225deg) scale(1.1);
+    box-shadow: 0px 0px 8px 2px orange, 0px 0px 16px 2px orange,
+      0px 0px 24px 4px orange;
+  }
+  100% {
+    transform: translateX(-50%) rotate(225deg) scale(1);
+    box-shadow: 0px 0px 4px orange, 0px 0px 12px orange, 0px 0px 18px orange;
+  }
+}
+
+.container-input {
+  display: flex;
+  position: absolute;
+  width: 300px;
+  justify-content: center;
+  // background-color: aliceblue;
+
+  input {
+    width: 40px;
+    height: 45px;
+    margin: 0px 3px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 32px;
+    border: 1px solid white;
+    border-radius: 2px;
+    background-color: transparent;
+    color: white;
+
+    &:disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+
+  h1 {
+    margin: 0 10px;
+  }
+
+  app-button {
+    position: absolute;
+    top: 170%;
+  }
+}

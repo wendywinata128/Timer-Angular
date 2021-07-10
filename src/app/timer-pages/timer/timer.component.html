@@ -1,0 +1,43 @@
+<div class="container">
+  <svg>
+    <circle></circle>
+    <circle class="progress"></circle>
+  </svg>
+  <div class="fire"></div>
+
+  <div class="container-input">
+    <input
+      type="text"
+      placeholder="0"
+      (keypress)="onKeyEvent($event, 'm1')"
+      [(ngModel)]="m1"
+      [disabled]="isStarted"
+    />
+    <input
+      type="text"
+      placeholder="0"
+      (keypress)="onKeyEvent($event, 'm2')"
+      [(ngModel)]="m2"
+      [disabled]="isStarted"
+    />
+    <h1>:</h1>
+    <input
+      type="text"
+      placeholder="0"
+      (keypress)="onKeyEvent($event, 's1')"
+      [(ngModel)]="s1"
+      [disabled]="isStarted"
+    />
+    <input
+      type="text"
+      placeholder="0"
+      (keypress)="onKeyEvent($event, 's2')"
+      [(ngModel)]="s2"
+      [disabled]="isStarted"
+    />
+    <app-button
+      [name]="isStarted ? 'Stop' : 'Start'"
+      (onBtnClicked)="startTimer()"
+    ></app-button>
+  </div>
+</div>

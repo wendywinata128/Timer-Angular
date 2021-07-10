@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+$primary: rgb(33, 33, 34);
+$secondary: rgb(231, 230, 230);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary;
+  color: $secondary;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-anim {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(3);
+  pointer-events: none;
+  animation: bubble 0.5s ease-out forwards;
+}
+
+@keyframes bubble {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+input:focus {
+  outline: none;
+}

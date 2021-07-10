@@ -1,0 +1,20 @@
+<div class="square">
+  <svg>
+    <circle></circle>
+    <circle class="progress" #progress></circle>
+  </svg>
+
+  <h1>{{ hours }}:{{ minute }}:{{ second }}:{{ milisecond }}</h1>
+
+  <div class="container-button">
+    <app-button
+      [name]="isStarted ? 'Stop' : 'Start'"
+      (onBtnClicked)="onStartClicked()"
+    ></app-button>
+    <app-button
+      *ngIf="isStarted"
+      [name]="isPaused ? 'Resume' : 'Pause'"
+      (onBtnClicked)="onPauseClicked()"
+    ></app-button>
+  </div>
+</div>

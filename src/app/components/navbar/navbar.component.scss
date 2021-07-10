@@ -1,0 +1,21 @@
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  background-color: rgb(3, 62, 114);
+}
+
+nav ul li a.active {
+  background-color: rgb(136, 175, 209);
+}
